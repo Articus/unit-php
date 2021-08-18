@@ -72,7 +72,7 @@ jobs:
         run: |
           for changes in $(find ./debs -name "*.deb")
           do
-            reprepro --basedir=./reprepro --outdir=./reprepro/public includedeb $(basename $(dirname $changes)) $changes
+            reprepro --basedir=./reprepro --outdir=./docs includedeb $(basename $(dirname $changes)) $changes
           done
       - name: Save changes to branch with reprepro repository
         run: |
