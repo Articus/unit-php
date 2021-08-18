@@ -1,0 +1,26 @@
+#Codename of Debian image
+ARG DEBIAN_VERSION="buster"
+#Update date of Debian image
+ARG DEBIAN_DATE="20210816"
+FROM debian:$DEBIAN_VERSION-$DEBIAN_DATE-slim
+
+#Duplicate declaration to make arg available in this scope
+ARG DEBIAN_VERSION="buster"
+#Current date to force OS packages update if needed
+ARG DATE="2021-08-17"
+#Add PHP repo
+RUN echo "OS package update: $DATE" \
+    && apt update && apt -y install apt-transport-https ca-certificates gnupg \
+    && echo "deb https://packages.sury.org/php/ $DEBIAN_VERSION main" >> /etc/apt/sources.list.d/php.list \
+    && echo "deb-src https://packages.sury.org/php/ $DEBIAN_VERSION main" >> /etc/apt/sources.list.d/php.list \
+    && apt-key adv --fetch-keys https://packages.sury.org/php/apt.gpg \
+    && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+#PHP version
+ARG PHP="8.0"
+#Install packages required for PHP module building
+RUN apt update && apt -y install git wget build-essential devscripts \
+    libxml2-utils xsltproc libssl-dev libpcre2-dev \
+    php${PHP}-dev libphp${PHP}-embed \
+    && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+#Setup dummy startup script
+CMD php -v

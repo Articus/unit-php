@@ -1,0 +1,82 @@
+name: Build PHP module for Nginx Unit
+on:
+  workflow_dispatch:
+    inputs:
+      unit_version:
+        description: Nginx Unit version for which PHP language module should be built
+        required: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - debian_version: buster
+            php_major_version: 7
+            php_minor_version: 4
+          - debian_version: buster
+            php_major_version: 8
+            php_minor_version: 0
+          - debian_version: bullseye
+            php_major_version: 8
+            php_minor_version: 0
+    env:
+      php_version: ${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}
+      unit_module_id: php${{ matrix.php_major_version }}${{ matrix.php_minor_version }}
+      unit_module_name: unit-php${{ matrix.php_major_version }}.{{ matrix.php_minor_version }}
+    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ env.php_version }}_2021-08-17
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Try to get Nginx Unit source code from cache
+        id: unit_cached_source
+        uses: actions/cache@v2
+        with:
+          key: unit-${{ github.event.inputs.unit_version }}
+          path: ./${{ github.event.inputs.unit_version }}.tar.gz
+      - name: Download Nginx Unit source code
+        if: '!steps.unit_cached_source.outputs.cache-hit'
+        run: wget https://github.com/nginx/unit/archive/refs/tags/${{ github.event.inputs.unit_version }}.tar.gz
+      - name: Unpack Nginx Unit source code
+        run: tar -xzf ./${{ github.event.inputs.unit_version }}.tar.gz
+      - name: Register new PHP language module in Nginx Unit source code
+        run: |
+          cp ./Makefile.${{ env.unit_module_id }} ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/
+          sed -i -r -e 's|(MODULES=)|\1\n\ninclude Makefile.${{ env.unit_module_id }}|' ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/Makefile
+          sed -i -r -e 's|(unit-php)|\1 ${{ env.unit_module_name }}|g' ./unit-${{ github.event.inputs.unit_version }}/docs/changes.xml
+          sed -i -r -e 's|(unit-php) ?\t?|\1 ${{ env.unit_module_name }}|g' ./unit-${{ github.event.inputs.unit_version }}/docs/Makefile
+      - name: Build new PHP language module
+        run: make unit-${{ env.unit_module_id }}
+        working-directory: ./unit-${{ github.event.inputs.unit_version }}/pkg/deb
+      - name: Upload packages with new PHP language module
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ matrix.debian_version }}
+          path: ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/debs/
+  publish:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    container: ghcr.io/articus/reprepro:2021-08-17
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Download packages with new PHP language modules
+        uses: actions/download-artifact@v2
+        with:
+          path: ./debs
+      - name: Add private GPG key for package signature
+        run: |
+          echo "${{ secrets.SIGNING_KEY }}" | gpg --import
+      - name: Add packages to reprepro repository
+        run: |
+          for changes in $(find ./debs -name "*.deb")
+          do
+            reprepro --basedir=./reprepro --outdir=./reprepro/public includedeb $(basename $(dirname $changes)) $changes
+          done
+      - name: Save changes to branch with reprepro repository
+        run: |
+          git add --all
+          git commit -m "Packages for Nginx Unit ${{ github.event.inputs.unit_version }}"
+          git push

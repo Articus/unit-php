@@ -1,0 +1,14 @@
+#Codename of Debian image
+ARG DEBIAN_VERSION="buster"
+#Update date of Debian image
+ARG DEBIAN_DATE="20210816"
+FROM debian:$DEBIAN_VERSION-$DEBIAN_DATE-slim
+
+#Current date to force OS packages update if needed
+ARG DATE="2021-08-17"
+#Install packages required for APT repository management
+RUN echo "OS package update: $DATE" \
+    && apt update && apt -y install git gnupg reprepro \
+    && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+#Setup dummy startup script
+CMD reprepro --help
