@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: buster
+Date: Wed, 18 Aug 2021 16:45:55 UTC
+Architectures: amd64
+Components: main
+MD5Sum:
+ 548084d82957fde6953c3f5286e0862d 3474 main/binary-amd64/Packages
+ 608e050b39233152cc492e21565d37de 1184 main/binary-amd64/Packages.gz
+ 063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 92f9b0ec8b2656847b612632542f1735 37 main/source/Release
+SHA1:
+ f20f40dbc1eb1c79e781fd77b97667e5f622325c 3474 main/binary-amd64/Packages
+ 583dc930b0b8b738393f088e683786e392f14db0 1184 main/binary-amd64/Packages.gz
+ f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
+SHA256:
+ 1338a990ed9c89440485065b5aeeab0af8e32ea1ace2d45a74772e9b0e9398a6 3474 main/binary-amd64/Packages
+ 830fecd5cfde8823a70d067a38d3186693cfa30628124740df332c84a4b49b1e 1184 main/binary-amd64/Packages.gz
+ f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 4e2108e8de58972a48b94535ab5f7e553edddf6b18462bf8ba44584b1161a0d9 37 main/source/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEOTPiHPIdpRaHdmC5b0E8d8PcSDMFAmEdOUMACgkQb0E8d8Pc
+SDPycgwAwPTlu7frp6n2j1JILQyaL8cfRXQe08G9aBcGzaKAPt2asYgFKQEEL0DU
+IYLSS5pa66M+y0PCipIdD2uPMyv7mMf+crTMMELp6qdgzIhbiGc8+gfPlVkqLzpm
+EJQ8WgWRHwUB3srgJdY5B/R5nbBSehrVTcyckJHzR7mupfwroVJS569j31H6enZM
+EszPjTB6nWh3kwTTzWq1fOePT8TSXgp5mITKF2HgZ6MzwGKD0tb+Hugevo6WmxIB
+KyBa7OW+LThKLhShU9I6aBemxARbCx8mftOlYpDNJHgwzoxzBEN/nbZOP38vCDJS
+Whu4O8RhURxjqarTbcr7y3VcDWpXIEQK62Wjl3fDawZndp5gOwOFtP0jg0TdIhXj
+yOealCyvP2iA9m9Mm8CzVLrIS7Nb6hIv18CGm+T01Zvi2XgLo6oJjCswz2FBQAoU
+uqhXu/x4D9kxvWSZdkjlghgbcexW/2/e2dos9UB1kM5QNvvmWaTjTxBDrCwwxrnC
+zT+7mxSM
+=N7G0
+-----END PGP SIGNATURE-----

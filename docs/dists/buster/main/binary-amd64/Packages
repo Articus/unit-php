@@ -1,0 +1,84 @@
+Package: unit-php7.4
+Version: 1.24.0-1~buster
+Architecture: amd64
+Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+Installed-Size: 168
+Depends: lsb-base, libc6 (>= 2.17), unit (= 1.24.0-1~buster), libphp7.4-embed
+Homepage: https://unit.nginx.org
+Priority: extra
+Section: admin
+Filename: pool/main/u/unit-php7.4/unit-php7.4_1.24.0-1~buster_amd64.deb
+Size: 53160
+SHA256: fbd11ac8aedf7003f9dd8fb158c394e210049aeb613f0f19cbdf1f7a88edac7c
+SHA1: 5c5c7a18d1f355353ebc3354374333a25d245238
+MD5sum: d9ecf9440dab50552ec5118653bf2201
+Description: PHP 7.4 module for NGINX Unit
+ NGINX Unit is a runtime and delivery environment for modern distributed
+ applications. It runs the application code in multiple languages
+ (PHP, Python, Go, etc.), and tightly couples it with traffic delivery
+ in and out of the application. Take this application server and proxy
+ directly in the cloud / container environments and fully control your app
+ dynamically via an API.
+ This package contains PHP 7.4 module for NGINX Unit.
+
+Package: unit-php7.4-dbg
+Source: unit-php7.4
+Version: 1.24.0-1~buster
+Architecture: amd64
+Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+Installed-Size: 334
+Depends: unit-php7.4 (= 1.24.0-1~buster)
+Homepage: https://unit.nginx.org
+Priority: extra
+Section: debug
+Filename: pool/main/u/unit-php7.4/unit-php7.4-dbg_1.24.0-1~buster_amd64.deb
+Size: 306672
+SHA256: 8492df0d11661a1bebf5114742cf651c099e6bbebe5c032cb91a15d9203d0759
+SHA1: d2fb8c7569d904cfa598c54069f47c1b5b63ce1b
+MD5sum: 418e9ad9e262f5d62b485cfe32242423
+Description: PHP 7.4 module for NGINX Unit (debug symbols)
+ This package contains the debugging symbols for unit-php7.4
+Build-Ids: 3ac84f25ee33034c1ec05dcbf12130bf3aa4c3a0 ab8a73bf8eef28ae7f577b950c99e9d50fba4483
+
+Package: unit-php8.0
+Version: 1.24.0-1~buster
+Architecture: amd64
+Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+Installed-Size: 168
+Depends: lsb-base, libc6 (>= 2.17), unit (= 1.24.0-1~buster), libphp8.0-embed
+Homepage: https://unit.nginx.org
+Priority: extra
+Section: admin
+Filename: pool/main/u/unit-php8.0/unit-php8.0_1.24.0-1~buster_amd64.deb
+Size: 53176
+SHA256: fa2b5ea9e19eeca1ac48e08e31f97193d2f9cbeca8eb403148af4cc08576cb0e
+SHA1: d6cc02e07b9fab4e0bcef2b23259b4b431f1f99f
+MD5sum: 067b647f00a6c68760c5939605b2faf4
+Description: PHP 8.0 module for NGINX Unit
+ NGINX Unit is a runtime and delivery environment for modern distributed
+ applications. It runs the application code in multiple languages
+ (PHP, Python, Go, etc.), and tightly couples it with traffic delivery
+ in and out of the application. Take this application server and proxy
+ directly in the cloud / container environments and fully control your app
+ dynamically via an API.
+ This package contains PHP 8.0 module for NGINX Unit.
+
+Package: unit-php8.0-dbg
+Source: unit-php8.0
+Version: 1.24.0-1~buster
+Architecture: amd64
+Maintainer: NGINX Packaging <nginx-packaging@f5.com>
+Installed-Size: 335
+Depends: unit-php8.0 (= 1.24.0-1~buster)
+Homepage: https://unit.nginx.org
+Priority: extra
+Section: debug
+Filename: pool/main/u/unit-php8.0/unit-php8.0-dbg_1.24.0-1~buster_amd64.deb
+Size: 306436
+SHA256: ec4aa490b91d5994e67a9cbef7401c7c050c7a3deef0099ac067c3fd25e0c3fc
+SHA1: 099279508001aa15a85712828df41cbe2a82b800
+MD5sum: f92285a45d4a7b149bf4d390c9bd909a
+Description: PHP 8.0 module for NGINX Unit (debug symbols)
+ This package contains the debugging symbols for unit-php8.0
+Build-Ids: 1c28705bf8478b5a6c921c433efdb280f91168da 3d978d9e34baf2525e0699452409ca8f36e77e83
+
