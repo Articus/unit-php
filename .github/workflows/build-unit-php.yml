@@ -23,7 +23,7 @@ jobs:
             php_minor_version: 0
     env:
       unit_module_id: php${{ matrix.php_major_version }}${{ matrix.php_minor_version }}
-      unit_module_name: unit-php${{ matrix.php_major_version }}.{{ matrix.php_minor_version }}
+      unit_module_name: unit-php${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}
     container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2021-08-17
     steps:
       - name: Checkout repository
