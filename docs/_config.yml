@@ -1,1 +1,3 @@
+#Jekyll configuration
+markdown: GFM
 theme: jekyll-theme-hacker
