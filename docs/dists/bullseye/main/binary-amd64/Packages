@@ -1,17 +1,17 @@
 Package: unit-php8.0
-Version: 1.25.0-1~bullseye
+Version: 1.26.0-1~bullseye
 Architecture: amd64
 Maintainer: NGINX Packaging <nginx-packaging@f5.com>
-Installed-Size: 169
-Depends: lsb-base, libc6 (>= 2.17), unit (= 1.25.0-1~bullseye), libphp8.0-embed
+Installed-Size: 173
+Depends: lsb-base, libc6 (>= 2.17), unit (= 1.26.0-1~bullseye), libphp8.0-embed
 Homepage: https://unit.nginx.org
 Priority: extra
 Section: admin
-Filename: pool/main/u/unit-php8.0/unit-php8.0_1.25.0-1~bullseye_amd64.deb
-Size: 54212
-SHA256: 04d6259a58bda7d440f342998be45a8b992bb393fb7f670f742ab3f4746ba56e
-SHA1: 1f92083a49f931c4d7f8d6bf0c28592e8ab67b21
-MD5sum: 864ef94be1047ab151a7342ac3841cc2
+Filename: pool/main/u/unit-php8.0/unit-php8.0_1.26.0-1~bullseye_amd64.deb
+Size: 55584
+SHA256: 608d33775f1fe97c2ed3a3e448bdfde15e210632ee6f365b69d84a3c6910c16c
+SHA1: f183b66af18d24aae04c10f83406cde4c647072c
+MD5sum: 709863c3a29a957ddad424952eb4b07c
 Description: PHP 8.0 module for NGINX Unit
  NGINX Unit is a runtime and delivery environment for modern distributed
  applications. It runs the application code in multiple languages
@@ -23,20 +23,20 @@ Description: PHP 8.0 module for NGINX Unit
 
 Package: unit-php8.0-dbg
 Source: unit-php8.0
-Version: 1.25.0-1~bullseye
+Version: 1.26.0-1~bullseye
 Architecture: amd64
 Maintainer: NGINX Packaging <nginx-packaging@f5.com>
-Installed-Size: 331
-Depends: unit-php8.0 (= 1.25.0-1~bullseye)
+Installed-Size: 328
+Depends: unit-php8.0 (= 1.26.0-1~bullseye)
 Homepage: https://unit.nginx.org
 Priority: extra
 Section: debug
-Filename: pool/main/u/unit-php8.0/unit-php8.0-dbg_1.25.0-1~bullseye_amd64.deb
-Size: 300960
-SHA256: 7d937d9c6d5edb8fb2c305f882ff7f1ada81178833519968b15da7d939c09e39
-SHA1: 4ba35aec2928dd967671660b31cf4f1eb95802be
-MD5sum: 76691faf109b182a1207fc1ba5b381dd
+Filename: pool/main/u/unit-php8.0/unit-php8.0-dbg_1.26.0-1~bullseye_amd64.deb
+Size: 299448
+SHA256: 7a4abf176b190c6a9b4a0e02923a438fbf53b72b92b766fa2b51c0d4df6d5526
+SHA1: b4fcc4d89dbcfc2b33765dc78a8647540f12280d
+MD5sum: 9684d4002641aa7553433c5545f81344
 Description: PHP 8.0 module for NGINX Unit (debug symbols)
  This package contains the debugging symbols for unit-php8.0
-Build-Ids: 7233e02f60335c8a0953f24c6771e00e34e350a5 76a462f6eb4925217eb565296a84044e65db3a0b
+Build-Ids: 8c98dee03ad8402280d50f909a36fcf0c36fec85 d3f78594f7a96a9d797ff3c1c811ca11fb145f16
 
