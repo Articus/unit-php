@@ -1,17 +1,17 @@
 Package: unit-php7.4
-Version: 1.26.0-1~buster
+Version: 1.26.1-1~buster
 Architecture: amd64
 Maintainer: NGINX Packaging <nginx-packaging@f5.com>
 Installed-Size: 169
-Depends: lsb-base, libc6 (>= 2.17), unit (= 1.26.0-1~buster), libphp7.4-embed
+Depends: lsb-base, libc6 (>= 2.17), unit (= 1.26.1-1~buster), libphp7.4-embed
 Homepage: https://unit.nginx.org
 Priority: extra
 Section: admin
-Filename: pool/main/u/unit-php7.4/unit-php7.4_1.26.0-1~buster_amd64.deb
-Size: 55032
-SHA256: bfa1c8f6168229c97ecef9b365686a5c452dfabf5656908b0c63004d9ece1fc1
-SHA1: 98340f78925fbe48178d2c314d411904ef6bfc9f
-MD5sum: 62f1cae24c3eb06521e997420a59c9f4
+Filename: pool/main/u/unit-php7.4/unit-php7.4_1.26.1-1~buster_amd64.deb
+Size: 55168
+SHA256: de87f0d85c53da6ca36a372a36549b1d7b0405603490cf06dd7cc26920e9375d
+SHA1: 9b3f05cc1bb26ecafbb3fddd40d0ffead4f24337
+MD5sum: 639d86017c1c9410e257866689ddd893
 Description: PHP 7.4 module for NGINX Unit
  NGINX Unit is a runtime and delivery environment for modern distributed
  applications. It runs the application code in multiple languages
@@ -23,37 +23,37 @@ Description: PHP 7.4 module for NGINX Unit
 
 Package: unit-php7.4-dbg
 Source: unit-php7.4
-Version: 1.26.0-1~buster
+Version: 1.26.1-1~buster
 Architecture: amd64
 Maintainer: NGINX Packaging <nginx-packaging@f5.com>
 Installed-Size: 335
-Depends: unit-php7.4 (= 1.26.0-1~buster)
+Depends: unit-php7.4 (= 1.26.1-1~buster)
 Homepage: https://unit.nginx.org
 Priority: extra
 Section: debug
-Filename: pool/main/u/unit-php7.4/unit-php7.4-dbg_1.26.0-1~buster_amd64.deb
-Size: 306596
-SHA256: eac251c76d3091faa6b9228ba0ab58ad0c7eb830ccefbf29be99e1d81003799f
-SHA1: 6417271e8ed13078232cea998cbab8fef618f610
-MD5sum: 683edbcf0874f3d2a1c988591d3f8545
+Filename: pool/main/u/unit-php7.4/unit-php7.4-dbg_1.26.1-1~buster_amd64.deb
+Size: 305796
+SHA256: 5fae0ceb7fb06eef51dc4ca0137c8c214ec7f0998acc353ed3d611d874b9cd69
+SHA1: eeb7dc9e23b668319137ce352de3c844244dc628
+MD5sum: a728054b828eac9e4558f371c4f32884
 Description: PHP 7.4 module for NGINX Unit (debug symbols)
  This package contains the debugging symbols for unit-php7.4
-Build-Ids: 186e841cfb23cb1811d0fabb9acf9cff7f8caae3 c30163c9c92a2fef1230970caf1871c3e0a9c437
+Build-Ids: 410e526bfd905b9277c9f269ef04bd44ddd736f1 c1b815bb2e330c46b80e5a01ce704ae6ba43c688
 
 Package: unit-php8.0
-Version: 1.26.0-1~buster
+Version: 1.26.1-1~buster
 Architecture: amd64
 Maintainer: NGINX Packaging <nginx-packaging@f5.com>
 Installed-Size: 169
-Depends: lsb-base, libc6 (>= 2.17), unit (= 1.26.0-1~buster), libphp8.0-embed
+Depends: lsb-base, libc6 (>= 2.17), unit (= 1.26.1-1~buster), libphp8.0-embed
 Homepage: https://unit.nginx.org
 Priority: extra
 Section: admin
-Filename: pool/main/u/unit-php8.0/unit-php8.0_1.26.0-1~buster_amd64.deb
-Size: 55036
-SHA256: 5ce7605feb5c7cc9c00fd85d94f26987739e617287dd4f6304f8d132a6d7e05c
-SHA1: 01de8eca40299e6cb447367ec980508ec5d330ef
-MD5sum: 4e4f876413bba45ef4c397cbb9a85b09
+Filename: pool/main/u/unit-php8.0/unit-php8.0_1.26.1-1~buster_amd64.deb
+Size: 55184
+SHA256: 13ff2db2383b219d602ffdb989ccbf4466e61dbfce41e53b489a69302d39b760
+SHA1: 43b98a13675017d6178bb240c95cbb37d1c1f260
+MD5sum: b4008c4c9a1b38bd07c4a523df5949e9
 Description: PHP 8.0 module for NGINX Unit
  NGINX Unit is a runtime and delivery environment for modern distributed
  applications. It runs the application code in multiple languages
@@ -65,20 +65,20 @@ Description: PHP 8.0 module for NGINX Unit
 
 Package: unit-php8.0-dbg
 Source: unit-php8.0
-Version: 1.26.0-1~buster
+Version: 1.26.1-1~buster
 Architecture: amd64
 Maintainer: NGINX Packaging <nginx-packaging@f5.com>
 Installed-Size: 335
-Depends: unit-php8.0 (= 1.26.0-1~buster)
+Depends: unit-php8.0 (= 1.26.1-1~buster)
 Homepage: https://unit.nginx.org
 Priority: extra
 Section: debug
-Filename: pool/main/u/unit-php8.0/unit-php8.0-dbg_1.26.0-1~buster_amd64.deb
-Size: 307480
-SHA256: 2ba755501f697fb2e164cf6b39f4c695ea98ea1672e35f7c5199cd08d9d8c7cc
-SHA1: 5615cd8a04a837d34515f32d33286b331984819d
-MD5sum: 62345bdc8c637465bf283db513603ddc
+Filename: pool/main/u/unit-php8.0/unit-php8.0-dbg_1.26.1-1~buster_amd64.deb
+Size: 304396
+SHA256: b9d2e3eacc64a7ca3d87a34bfc0a21817d14f5a5cc10dc7b162b34f2cf8fb853
+SHA1: c9d81157b9634a3f83acef29ed1cbaa894eadc2d
+MD5sum: 86a0f064c14bff4c71d3ca290093c193
 Description: PHP 8.0 module for NGINX Unit (debug symbols)
  This package contains the debugging symbols for unit-php8.0
-Build-Ids: be7a59e9b70791e3e1910f8b0c1d0ac80d3a2444 ea3262e66f3811dbc68e3d4d5750c31cdd07c820
+Build-Ids: 5cf9c3dc6116102369bb9db3e3706ddab4fa1cdd 80afa352d0d374837ceaf424ce29e403dedadb84
 
