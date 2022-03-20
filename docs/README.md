@@ -3,8 +3,8 @@
 This Debian repository provides packages with custom PHP language modules for [Nginx Unit](https://unit.nginx.org) built against [PHP packages](https://packages.sury.org/php/) from [deb.sury.org](https://deb.sury.org/). I tried to make building process as transparent as possible - you can check all infrastructure related files [in parent GitHub project](https://github.com/Articus/unit-php). Repository is updated for each Nginx Unit release by [manual GitHub Actions workflow run](https://github.com/Articus/unit-php/actions/workflows/build-unit-php.yml).
 
 Currently, the following versions are supported:
-* Debian 10 Buster: PHP 7.4 and PHP 8.0
-* Debian 11 Bullseye: PHP 8.0
+* Debian 10 Buster: PHP 7.4 , PHP 8.0 and PHP 8.1
+* Debian 11 Bullseye: PHP 8.0 and PHP 8.1
 
 ## How to use
 
@@ -36,6 +36,10 @@ apt install unit-php7.4
 #For PHP 8.0
 apt update
 apt install unit-php8.0
+
+#For PHP 8.1
+apt update
+apt install unit-php8.1
 ```
 ## Enjoy!
 Hopefully, this repository will be useful for someone except me.
