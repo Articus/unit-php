@@ -18,13 +18,19 @@ jobs:
           - debian_version: buster
             php_major_version: 8
             php_minor_version: 0
+          - debian_version: buster
+            php_major_version: 8
+            php_minor_version: 1
           - debian_version: bullseye
             php_major_version: 8
             php_minor_version: 0
+          - debian_version: bullseye
+            php_major_version: 8
+            php_minor_version: 1
     env:
       unit_module_id: php${{ matrix.php_major_version }}${{ matrix.php_minor_version }}
       unit_module_name: unit-php${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}
-    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2021-08-17
+    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2022-03-20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -57,7 +63,7 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
-    container: ghcr.io/articus/reprepro:2021-08-17
+    container: ghcr.io/articus/reprepro:2022-03-20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2

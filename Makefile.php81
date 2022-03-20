@@ -1,0 +1,47 @@
+MODULES+=		php81
+MODULE_SUFFIX_php81=	php8.1
+
+MODULE_SUMMARY_php81=	PHP 8.1 module for NGINX Unit
+
+MODULE_VERSION_php81=	$(VERSION)
+MODULE_RELEASE_php81=	1
+
+MODULE_CONFARGS_php81=	php --module=php81
+MODULE_MAKEARGS_php81=	php81
+MODULE_INSTARGS_php81=	php81-install
+
+MODULE_SOURCES_php81=	unit.example-php-app \
+			unit.example-php-config
+
+BUILD_DEPENDS_php81=	php8.1-dev libphp8.1-embed
+MODULE_BUILD_DEPENDS_php81=,php8.1-dev,libphp8.1-embed
+MODULE_DEPENDS_php81=,libphp8.1-embed
+
+BUILD_DEPENDS+=		$(BUILD_DEPENDS_php81)
+
+define MODULE_PREINSTALL_php81
+	mkdir -p debian/unit-php/usr/share/doc/unit-php/examples/phpinfo-app
+	install -m 644 -p debian/unit.example-php-app debian/unit-php/usr/share/doc/unit-php/examples/phpinfo-app/index.php
+	install -m 644 -p debian/unit.example-php-config debian/unit-php/usr/share/doc/unit-php/examples/unit.config
+endef
+export MODULE_PREINSTALL_php81
+
+define MODULE_POST_php81
+cat <<BANNER
+----------------------------------------------------------------------
+
+The $(MODULE_SUMMARY_php81) has been installed.
+
+To check out the sample app, run these commands:
+
+ sudo service unit restart
+ cd /usr/share/doc/unit-$(MODULE_SUFFIX_php81)/examples
+ sudo curl -X PUT --data-binary @unit.config --unix-socket /var/run/control.unit.sock http://localhost/config
+ curl http://localhost:8300/
+
+Online documentation is available at https://unit.nginx.org
+
+----------------------------------------------------------------------
+BANNER
+endef
+export MODULE_POST_php81
