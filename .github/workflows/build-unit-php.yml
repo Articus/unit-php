@@ -12,31 +12,25 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - debian_version: buster
-            php_major_version: 7
-            php_minor_version: 4
-          - debian_version: buster
-            php_major_version: 8
-            php_minor_version: 0
-          - debian_version: buster
-            php_major_version: 8
-            php_minor_version: 1
           - debian_version: bullseye
             php_major_version: 8
             php_minor_version: 0
           - debian_version: bullseye
             php_major_version: 8
             php_minor_version: 1
+          - debian_version: bullseye
+            php_major_version: 8
+            php_minor_version: 2
     env:
       unit_module_id: php${{ matrix.php_major_version }}${{ matrix.php_minor_version }}
       unit_module_name: unit-php${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}
-    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2022-03-20
+    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2023-01-08
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Try to get Nginx Unit source code from cache
         id: unit_cached_source
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           key: unit-${{ github.event.inputs.unit_version }}
           path: ./${{ github.event.inputs.unit_version }}.tar.gz
@@ -55,7 +49,7 @@ jobs:
         run: make unit-${{ env.unit_module_id }}
         working-directory: ./unit-${{ github.event.inputs.unit_version }}/pkg/deb
       - name: Upload packages with new PHP language module
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.debian_version }}
           path: ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/debs/
@@ -63,12 +57,12 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
-    container: ghcr.io/articus/reprepro:2022-03-20
+    container: ghcr.io/articus/reprepro:2023-01-08
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Download packages with new PHP language modules
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           path: ./debs
       - name: Add private GPG key for package signature
