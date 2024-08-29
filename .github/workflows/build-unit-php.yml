@@ -12,58 +12,67 @@ jobs:
       fail-fast: true
       matrix:
         include:
-          - debian_version: bullseye
+          - debian_version: bookworm
+            php_major_version: 7
+            php_minor_version: 4
+          - debian_version: bookworm
             php_major_version: 8
             php_minor_version: 0
-          - debian_version: bullseye
+          - debian_version: bookworm
             php_major_version: 8
             php_minor_version: 1
-          - debian_version: bullseye
+          - debian_version: bookworm
             php_major_version: 8
             php_minor_version: 2
+          - debian_version: bookworm
+            php_major_version: 8
+            php_minor_version: 3
     env:
       unit_module_id: php${{ matrix.php_major_version }}${{ matrix.php_minor_version }}
       unit_module_name: unit-php${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}
-    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2023-01-08
+    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2024-08-29
     steps:
+      - name: Workaround for https://git-scm.com/docs/git-config/2.39.2#Documentation/git-config.txt-safedirectory
+        run: chown root:root ./
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Try to get Nginx Unit source code from cache
         id: unit_cached_source
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: unit-${{ github.event.inputs.unit_version }}
-          path: ./${{ github.event.inputs.unit_version }}.tar.gz
-      - name: Download Nginx Unit source code
+          path: ./unit-code
+      - name: Download Nginx Unit source code from repository (https://github.com/nginx/unit/archive/refs/tags/*.tar.gz and https://sources.nginx.org/unit/*.tar.gz do no contain packaging scripts)
         if: '!steps.unit_cached_source.outputs.cache-hit'
-        run: wget https://github.com/nginx/unit/archive/refs/tags/${{ github.event.inputs.unit_version }}.tar.gz
-      - name: Unpack Nginx Unit source code
-        run: tar -xzf ./${{ github.event.inputs.unit_version }}.tar.gz
+        run: git clone --depth=1 --branch ${{ github.event.inputs.unit_version }} https://github.com/nginx/unit.git ./unit-code
       - name: Register new PHP language module in Nginx Unit source code
         run: |
-          cp ./Makefile.${{ env.unit_module_id }} ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/
-          sed -i -r -e 's|(MODULES=)|\1\n\ninclude Makefile.${{ env.unit_module_id }}|' ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/Makefile
-          sed -i -r -e 's|(unit-php)|\1 ${{ env.unit_module_name }}|g' ./unit-${{ github.event.inputs.unit_version }}/docs/changes.xml
-          sed -i -r -e 's|(unit-php) ?\t?|\1 ${{ env.unit_module_name }}|g' ./unit-${{ github.event.inputs.unit_version }}/docs/Makefile
+          cp ./Makefile.${{ env.unit_module_id }} ./unit-code/pkg/deb/
+          sed -i -r -e 's|(MODULES=)|\1\n\ninclude Makefile.${{ env.unit_module_id }}|' ./unit-code/pkg/deb/Makefile
+          sed -i -r -e 's|(unit-php)|\1 ${{ env.unit_module_name }}|g' ./unit-code/docs/changes.xml
+          sed -i -r -e 's|(unit-php) ?\t?|\1 ${{ env.unit_module_name }}|g' ./unit-code/docs/Makefile
       - name: Build new PHP language module
         run: make unit-${{ env.unit_module_id }}
-        working-directory: ./unit-${{ github.event.inputs.unit_version }}/pkg/deb
+        working-directory: ./unit-code/pkg/deb
       - name: Upload packages with new PHP language module
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.debian_version }}
-          path: ./unit-${{ github.event.inputs.unit_version }}/pkg/deb/debs/
+          name: ${{ matrix.debian_version }}-${{ env.unit_module_id }}
+          path: ./unit-code/pkg/deb/debs/
   publish:
     needs:
       - build
     runs-on: ubuntu-latest
     container: ghcr.io/articus/reprepro:2023-01-08
     steps:
+      - name: Workaround for https://git-scm.com/docs/git-config/2.39.2#Documentation/git-config.txt-safedirectory
+        run: chown root:root ./
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Download packages with new PHP language modules
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
+          merge-multiple: true
           path: ./debs
       - name: Add private GPG key for package signature
         run: |
@@ -72,7 +81,7 @@ jobs:
         run: |
           for changes in $(find ./debs -name "*.deb")
           do
-            reprepro --basedir=./reprepro --outdir=./docs includedeb $(basename $(dirname $changes)) $changes
+            reprepro --basedir=./reprepro --outdir=./docs includedeb $(echo "$changes" | grep -o -P '(?<=~)[^_.]+') $changes
           done
       - name: Save changes to branch with reprepro repository
         run: |

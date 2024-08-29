@@ -7,3 +7,8 @@ Codename: bullseye
 Components: main
 Architectures: amd64 source
 SignWith: yes
+
+Codename: bookworm
+Components: main
+Architectures: amd64 source
+SignWith: yes
