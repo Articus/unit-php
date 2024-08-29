@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: bookworm
+Date: Thu, 29 Aug 2024 15:46:13 UTC
+Architectures: amd64
+Components: main
+MD5Sum:
+ f5ef1e7591fab197464596137a2d9f52 8675 main/binary-amd64/Packages
+ 492f84cc64a76ee45daf9fea3829289a 2082 main/binary-amd64/Packages.gz
+ 063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 92f9b0ec8b2656847b612632542f1735 37 main/source/Release
+SHA1:
+ caa00c578ecb6d2ee7fa41b7a492dd405b5ba6fe 8675 main/binary-amd64/Packages
+ 3ddb5914d76aa093d96a34a7070b7f02c18a6040 2082 main/binary-amd64/Packages.gz
+ f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
+SHA256:
+ 2dff8a65720b6d9f8bbf6244dd97a51c02653f52b43fc11453485c032b59a18e 8675 main/binary-amd64/Packages
+ 3e3e49e0bfdaac5fb4737f4867f788d49e553864493c39384583ce4a184a0357 2082 main/binary-amd64/Packages.gz
+ f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 4e2108e8de58972a48b94535ab5f7e553edddf6b18462bf8ba44584b1161a0d9 37 main/source/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEyQTQ4/AXFWzZGE5lTPwoGo3VBmQFAmbQl8UACgkQTPwoGo3V
+BmRIZgv+L1GNtXkQsu0uf2gPzlOBLg1bDwc8k58zE/oGjHYNlzRFJGJH4AvxLoXB
+RgbaI9CFmmINWpxHJZn4WsG6hMr/phWYTlmjbUKPQZRKkvmCXIP88CQ4saxr9u6G
+f9V0mi2ytNRvOxvCAXPBMGnnHRYsnF9e5stYMcNM3YYcctC0QXs0t/wWY55C4ukI
+iiDN7Rds4EWxjAMBRRIr6rzEQd/p70DT6MzUki28v6gWhl2Nx/O/j3zX7hKM0of9
+6Lsi05ofkSsCHONN8oup8jnrsfwAulHO67/+psbNisTywqL6jHuFEIyrlv/3Y2nW
+Qc0gKFgUuiR4KLHwnDIo5gDUfLereWVIBHAsQP600vK3Ah1RKuAA7+aGbt34461B
+5oMGoMeGLOOwyS4Mlbb+2UcpLP4ERyWo2XWd/+nQAZjSEN0DSaucQAjWfauMnRDE
+ozSF7Lflf57y8mq37S1Vrxd955t1Vtu12vTjCmXLnLVI/EEt+sr2C8RjFs5KFa3P
+okk/fB/L
+=EylK
+-----END PGP SIGNATURE-----
