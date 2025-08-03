@@ -1,0 +1,42 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Codename: bookworm
+Date: Sun, 03 Aug 2025 21:09:22 UTC
+Architectures: amd64
+Components: main
+MD5Sum:
+ c297e2c20afa3f38c8c77598077b4ab4 10410 main/binary-amd64/Packages
+ 458f75bea3d005f3519614a767ee1a80 2387 main/binary-amd64/Packages.gz
+ 063287201b2354699acfe229a752201d 36 main/binary-amd64/Release
+ d41d8cd98f00b204e9800998ecf8427e 0 main/source/Sources
+ 7029066c27ac6f5ef18d660d5741979a 20 main/source/Sources.gz
+ 92f9b0ec8b2656847b612632542f1735 37 main/source/Release
+SHA1:
+ bff7378fe23ba36bbff36fd87b8a6fc69eac70b3 10410 main/binary-amd64/Packages
+ a0fbf4687f7974cc697adf541d852d15956b8a90 2387 main/binary-amd64/Packages.gz
+ f9082edea14092794f38390390e06abf8a922f7d 36 main/binary-amd64/Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709 0 main/source/Sources
+ 46c6643f07aa7f6bfe7118de926b86defc5087c4 20 main/source/Sources.gz
+ 6bf4af37ca3d5dec33f6438d83b5c1483de0833a 37 main/source/Release
+SHA256:
+ beefa75a4c5416e1584401b6dd21f7612def16987b39121d539fe634b2b8380f 10410 main/binary-amd64/Packages
+ dec693bceaf0041ca8a75bcff758b3b3121bc1c193add3162d8ae784a7407dcb 2387 main/binary-amd64/Packages.gz
+ f4aafa353a338baedf9e98523c13d7ffeda979ec3cf745f9fad977dd770595c8 36 main/binary-amd64/Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 main/source/Sources
+ 59869db34853933b239f1e2219cf7d431da006aa919635478511fabbfc8849d2 20 main/source/Sources.gz
+ 4e2108e8de58972a48b94535ab5f7e553edddf6b18462bf8ba44584b1161a0d9 37 main/source/Release
+-----BEGIN PGP SIGNATURE-----
+
+iQGzBAEBCgAdFiEEk55x3QoFVcMuampm87nuGRb7yBAFAmiP0AIACgkQ87nuGRb7
+yBD2rgv7BBRq8y4QcRB+0zvWZZfGYTxlzbtM0QlLeqUOkB35nDBOolA/DOCwRVQ2
+tgV1/swUO4gGOvtaIpZyEGPzzhfgl+mkeEkRaDf+xocOi4uw1Cz9eIrLL5mUv7R8
+GCBfACrEzpdduzAUxrcl9fiHiWxOG/x8JDPIaPDenNMzZ3bChNRt2suuZQcK64/r
+kzSlPr04vI44NQCeH6o3yRTch4vcfU9h5jg38SrbZSbLnztJhZI9UWNQ7R8qvV0z
+pQ5yTeadLz6gxHMgEdPqIeU27LdhVBOxQFAYZn3UG3MfJ+vZ7BhhOW/Qy8dSecEq
+UUMUlixnHAzYcdbTdfwjsVa8bq6dNVQDgP+rSg8m0E0xms0cbhCZUIJMWiUoZ+fJ
+4oL3zGOHTjFwY3R1RfSiB3lt88wtbub083PwLkynudIlqGBpscJxSk56drak2trn
+YydWZZZ6WDr1aotkbz5amPiFAW0s8KUNkY1nzCzTolL2ig6PcYy2sgUxLvMWDIdq
+WtrM4UeG
+=/X34
+-----END PGP SIGNATURE-----
