@@ -3,7 +3,7 @@
 This Debian repository provides packages with custom PHP language modules for [Nginx Unit](https://unit.nginx.org) built against [PHP packages](https://packages.sury.org/php/) from [deb.sury.org](https://deb.sury.org/). I tried to make building process as transparent as possible - you can check all infrastructure related files [in parent GitHub project](https://github.com/Articus/unit-php). Repository is updated for each Nginx Unit release by [manual GitHub Actions workflow run](https://github.com/Articus/unit-php/actions/workflows/build-unit-php.yml).
 
 Currently, the following versions are supported:
-* Debian 12 Bookworm: PHP 7.4 , PHP 8.0 , PHP 8.1 , PHP 8.2 and PHP 8.3
+* Debian 12 Bookworm: PHP 7.4 , PHP 8.0 , PHP 8.1 , PHP 8.2 , PHP 8.3 and PHP 8.4
 
 ## How to use
 
@@ -44,6 +44,10 @@ apt install unit-php8.2
 #For PHP 8.3
 apt update
 apt install unit-php8.3
+
+#For PHP 8.4
+apt update
+apt install unit-php8.4
 ```
 ## Enjoy!
 Hopefully, this repository will be useful for someone except me.

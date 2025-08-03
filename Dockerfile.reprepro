@@ -1,11 +1,11 @@
 #Codename of Debian image
 ARG DEBIAN_VERSION="bookworm"
 #Update date of Debian image
-ARG DEBIAN_DATE="20240812"
+ARG DEBIAN_DATE="20250721"
 FROM debian:$DEBIAN_VERSION-$DEBIAN_DATE-slim
 
 #Current date to force OS packages update if needed
-ARG DATE="2024-08-29"
+ARG DATE="2025-08-03"
 #Install packages required for APT repository management
 RUN echo "OS package update: $DATE" \
     && apt update && apt -y install git gnupg reprepro \

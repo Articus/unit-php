@@ -27,10 +27,13 @@ jobs:
           - debian_version: bookworm
             php_major_version: 8
             php_minor_version: 3
+          - debian_version: bookworm
+            php_major_version: 8
+            php_minor_version: 4
     env:
       unit_module_id: php${{ matrix.php_major_version }}${{ matrix.php_minor_version }}
       unit_module_name: unit-php${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}
-    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2024-08-29
+    container: ghcr.io/articus/unit-php-builder:${{ matrix.debian_version }}_${{ matrix.php_major_version }}.${{ matrix.php_minor_version }}_2025-08-03
     steps:
       - name: Workaround for https://git-scm.com/docs/git-config/2.39.2#Documentation/git-config.txt-safedirectory
         run: chown root:root ./
@@ -63,7 +66,7 @@ jobs:
     needs:
       - build
     runs-on: ubuntu-latest
-    container: ghcr.io/articus/reprepro:2023-01-08
+    container: ghcr.io/articus/reprepro:2025-08-03
     steps:
       - name: Workaround for https://git-scm.com/docs/git-config/2.39.2#Documentation/git-config.txt-safedirectory
         run: chown root:root ./

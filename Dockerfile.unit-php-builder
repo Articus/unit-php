@@ -1,13 +1,13 @@
 #Codename of Debian image
 ARG DEBIAN_VERSION="bookworm"
 #Update date of Debian image
-ARG DEBIAN_DATE="20240812"
+ARG DEBIAN_DATE="20250721"
 FROM debian:$DEBIAN_VERSION-$DEBIAN_DATE-slim
 
 #Duplicate declaration to make arg available in this scope
 ARG DEBIAN_VERSION="bookworm"
 #Current date to force OS packages update if needed
-ARG DATE="2024-08-29"
+ARG DATE="2025-08-03"
 #Add PHP repo key
 ADD --chmod=644 https://packages.sury.org/php/apt.gpg /etc/apt/keyrings/php.gpg
 #Add PHP repo
@@ -21,7 +21,7 @@ RUN apt update && apt -y install git \
     build-essential debhelper devscripts fakeroot libxml2-utils lintian lsb-release xsltproc libssl-dev clang llvm \
     && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 #PHP version
-ARG PHP="8.3"
+ARG PHP="8.4"
 #Install packages required for PHP module building - variables BUILD_DEPENDS_php* from https://github.com/Articus/unit-php/Makefile.php*
 RUN apt update && apt -y install php${PHP}-dev libphp${PHP}-embed \
     && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
